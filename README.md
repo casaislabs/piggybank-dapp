@@ -1,70 +1,257 @@
-# Getting Started with Create React App
+# PiggyBank DApp
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+PiggyBank is a decentralized application (DApp) that allows users to securely deposit and withdraw Ether (ETH) using a smart contract deployed on the Ethereum blockchain. This DApp is designed to be intuitive, secure, and efficient, with a modern frontend developed in React.js and a backend powered by Solidity.
 
-## Available Scripts
+## 📂 Project Structure
 
-In the project directory, you can run:
+This repository contains the frontend of the PiggyBank DApp. The associated smart contract is hosted in a separate repository:
 
-### `npm start`
+- Smart Contract Repository: [PiggyBank Smart Contract](https://github.com/martinperezcss/piggybank-contract)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🚀 Features
 
-### `npm test`
+### Frontend
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **MetaMask Integration**: Users can easily connect their MetaMask wallet to interact with the DApp.
+- **ETH Deposit**: Users can deposit ETH into the smart contract.
+- **ETH Withdrawal**: Users can withdraw all available funds from the smart contract.
+- **Balance Check**: Users can check both their balance on the contract and their wallet balance. Additionally, they can check the balance of any address on the contract.
+- **Responsive Design**: The frontend utilizes Tailwind CSS for a modern, mobile-friendly, and attractive user interface.
 
-### `npm run build`
+### Backend (Smart Contract)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The smart contract is deployed on the Ethereum Sepolia Testnet and provides the following functionalities:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- ETH Deposit and Withdrawal.
+- Balance Queries.
+- Protection against re-entrancy attacks using OpenZeppelin's ReentrancyGuard.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## 📍 Smart Contract Address
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+The smart contract is deployed on the Sepolia Testnet at the following address:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- **Contract Address**: `0xc810bf49064D3eC2e1583a143948eD35f11d3E30`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## 🛠️ Technologies Used
 
-## Learn More
+### Frontend
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- **React.js**: Framework for building the user interface.
+- **Tailwind CSS**: A utility-first CSS framework for responsive design.
+- **ethers.js**: A library to interact with the Ethereum blockchain.
+- **MetaMask**: Browser extension for managing the user's wallet.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Backend
 
-### Code Splitting
+- **Solidity**: Programming language for Ethereum smart contracts.
+- **Hardhat**: Development environment for Ethereum.
+- **OpenZeppelin**: A library to implement secure smart contracts.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+---
 
-### Analyzing the Bundle Size
+## 📦 Prerequisites
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- **Node.js** (v16 or higher recommended).
+- **MetaMask** browser extension installed.
+- **Smart Contract Deployment**: Ensure the contract is deployed on the Sepolia network.
 
-### Making a Progressive Web App
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## ⚙️ Setup Instructions
 
-### Advanced Configuration
+### 1. Clone the Repository
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Clone this repository to your local machine:
 
-### Deployment
+```bash
+git clone https://github.com/martinperezcss/piggybank-frontend.git
+cd piggybank-frontend
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### 2. Install Dependencies
 
-### `npm run build` fails to minify
+Run the following command to install the project's dependencies:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```bash
+npm install
+```
+
+Create a `.env` file in the root of the project directory with the following content:
+
+```bash
+REACT_APP_CONTRACT_ADDRESS=0xc810bf49064D3eC2e1583a143948eD35f11d3E30
+REACT_APP_NETWORK=sepolia
+```
+
+### 3. Start the Development Server
+
+Run the following command to start the app in development mode:
+
+```bash
+npm start
+```
+
+The application will be available at [http://localhost:3000](http://localhost:3000).
+
+---
+
+## 🚀 Deploying to Production
+
+### 1. Build the Application
+
+Run the following command to generate an optimized build of the frontend:
+
+```bash
+npm run build
+```
+
+### 2. Deploy on Vercel
+
+Connect this repository to Vercel. Set up the following environment variables in the Vercel dashboard:
+
+- `REACT_APP_CONTRACT_ADDRESS`
+- `REACT_APP_NETWORK`
+
+Deploy the application to production.
+
+---
+
+## 🧪 Testing
+
+### Frontend
+
+To run frontend tests, use the following command:
+
+```bash
+npm test
+```
+
+### Backend
+
+Automated tests for the smart contract are available in the contract repository. Refer to the smart contract's README for more information on running tests.
+
+---
+
+## 📜 License
+
+This project is licensed under the MIT License. See the LICENSE file for more details.
+
+---
+
+## 🔍 Technical Details of the PiggyBank Project
+
+### 1. Smart Contract
+
+- **Language**: Solidity  
+- **Compiler Version**: 0.8.28  
+- **Development Framework**: Hardhat  
+- **Dependencies**:  
+    - OpenZeppelin (for ReentrancyGuard and other security utilities).  
+- **Deployment Network**: Ethereum (Sepolia Testnet)  
+- **Contract Address**: `0xc810bf49064D3eC2e1583a143948eD35f11d3E30`  
+
+#### Key Functions:
+
+- `deposit()`: Allows users to deposit ETH.  
+- `withdraw()`: Allows users to withdraw all their funds.  
+- `getBalanceOf(address user)`: Returns the balance of a specific user.  
+
+#### Events:
+
+- `Deposited(address indexed user, uint256 amount)`  
+- `Withdrawn(address indexed user, uint256 amount)`  
+
+#### Security:
+
+- Protection against re-entrancy attacks with `ReentrancyGuard`.
+
+---
+
+### 2. Frontend
+
+- **Framework**: React.js  
+- **Styling**: Tailwind CSS  
+- **Blockchain Interaction**: ethers.js  
+- **MetaMask Integration**: Uses `window.ethereum` for wallet connection.  
+
+#### Key Components:
+
+- `ConnectWallet`: Manages wallet connection with MetaMask.  
+- `Deposit`: Allows users to deposit ETH.  
+- `Withdraw`: Allows users to withdraw funds.  
+- `Balance`: Displays the user’s balance.  
+- `CheckBalance`: Allows checking the balance of any address on the contract.  
+
+#### Environment Variables:
+
+- `REACT_APP_CONTRACT_ADDRESS`: Smart contract address.  
+- `REACT_APP_NETWORK`: Deployment network (Sepolia).
+
+---
+
+### 3. Backend Configuration
+
+#### `.env` File:
+
+- `PRIVATE_KEY`: Private key for signing transactions.  
+- `ALCHEMY_API_URL`: URL for Alchemy to interact with the Ethereum network.  
+- `ETHERSCAN_API_KEY`: API key for contract verification on Etherscan.
+
+---
+
+### 4. Deployment
+
+#### Frontend:
+
+- **Deployed on**: Vercel  
+- **Root directory configuration**: `frontend`  
+- **Build command**: `npm run build`  
+- **Output directory**: `build`
+
+#### Backend:
+
+- **Deployed on**: Sepolia using Hardhat  
+- **Verified on**: Etherscan with the provided API key.
+
+---
+
+### 5. Testing
+
+#### Frontend:
+
+- Unit tests with Jest. Available scripts in `package.json`.
+
+#### Backend:
+
+- Automated tests with Hardhat. Covers cases such as deposits, withdrawals, and security validations.
+
+---
+
+### 6. Key Dependencies
+
+#### Frontend:
+
+- React.js  
+- ethers.js  
+- Tailwind CSS  
+
+#### Backend:
+
+- Hardhat  
+- OpenZeppelin  
+- dotenv (for environment variable management)
+
+---
+
+### 7. Workflow
+
+1. The user connects their MetaMask wallet.  
+2. The frontend interacts with the smart contract using ethers.js.  
+3. Contract functions (`deposit`, `withdraw`, `getBalanceOf`) are invoked based on user actions.  
+4. Events emitted by the contract (`Deposited`, `Withdrawn`) update the UI in real-time.  
