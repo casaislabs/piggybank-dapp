@@ -6,7 +6,7 @@ PiggyBank is a decentralized application (DApp) that allows users to securely de
 
 This repository contains the frontend of the PiggyBank DApp. The associated smart contract is hosted in a separate repository:
 
-- Smart Contract Repository: [PiggyBank Smart Contract](https://github.com/martinperezcss/piggybank-contract)
+- Smart Contract Repository: [PiggyBank Smart Contract](https://github.com/casaislabs/piggybank-contract)
 
 ---
 
@@ -70,7 +70,7 @@ The smart contract is deployed on the Sepolia Testnet at the following address:
 Clone this repository to your local machine:
 
 ```bash
-git clone https://github.com/martinperezcss/piggybank-frontend.git
+git clone https://github.com/casaislabs/piggybank-frontend.git
 cd piggybank-frontend
 ```
 
